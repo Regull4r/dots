@@ -1,0 +1,6 @@
+* Dots
+emacs
+i3
+i3status
+Xresources
+.zshrc
