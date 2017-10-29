@@ -1,6 +1,5 @@
-* Dots
-emacs
-i3
-i3status
-Xresources
-.zshrc
+* Dotfiles
+- i3
+- i3status
+- emacs
+
