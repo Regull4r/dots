@@ -1,6 +1,6 @@
 #Basic Definitions----
 set $mod Mod4
-set $term termite
+set $term terminology
 hide_edge_borders smart
 font xft:Noto Sans 10
 focus_follows_mouse no
@@ -21,17 +21,16 @@ exec --no-startup-id emacs -daemon
 
 #Dropdown Terminal----
 #Shortcut for this in shorcuts
-exec  $term -name dropdown
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 625 400
 for_window [instance="dropdown"] move position center
 for_window [instance="dropdown"] move scratchpad
-
+exec  $term -n dropdown
 
 #Shortcuts----
 #Terminal
 bindsym $mod+t exec $term
-bindsym $mod+Shift+t exec termite -name metask
+bindsym $mod+Shift+t  exec $term -n dropdown
 bindsym $mod+Return [instance="dropdown"] scratchpad show; move position center
 #Kill
 bindsym $mod+Shift+BackSpace kill
