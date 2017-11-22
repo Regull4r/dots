@@ -52,7 +52,7 @@
 
 (use-package smartparens
   :ensure t
-  :init (add-hook 'prog-mode-hook #' smartparens-mode ))
+  :init (smartparens-global-mode t))
 
 (use-package rainbow-delimiters
   :ensure t
@@ -87,6 +87,10 @@
   :bind (("C-x g" . magit-status)
          ("C-x M-g" . magit-dispatch-popup))
   )
+;;Sudo Edit
+(use-package sudo-edit
+  :ensure t)
+;;Language
 ;;Haskell
 (use-package haskell-mode
   :ensure t)
