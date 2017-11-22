@@ -7,6 +7,8 @@ focus_follows_mouse no
 exec xmodmap -e "keycode 124=F11"
 
 #Startup applications----
+#Wallpaper
+exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/deer.png
 #Wifi
 exec --no-startup-id nm-applet
 #Wallpaper
@@ -84,7 +86,7 @@ bindsym $mod+Shift+r restart
 #Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 #Lock Screen
-bindsym $mod+0 exec i3lock -t -i ~/Pictures/Wallpapers/deer.png
+bindsym $mod+0 exec i3lock  -i ~/Pictures/Wallpapers/deerll.png
 # Resize window 
 bindsym $mod+r mode "resize"
 mode "resize" {
@@ -146,6 +148,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 
 #Specific workspaces for certain windows
 assign [class="Chromium"] $ws1
+assign [class="firefox"] $ws1
 assign [class="Emacs"] $ws2
 assign [class="Telegram"] $ws5
 #spotify doesn repect

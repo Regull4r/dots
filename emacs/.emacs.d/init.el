@@ -13,7 +13,7 @@
   (package-refresh-contents)
   (package-install 'use-package)
   ) 
-;;---------/INTERFACE--------
+;;Interface
 (tooltip-mode -1)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
@@ -21,7 +21,7 @@
 (global-linum-mode 1)
 (set-fringe-mode 0)
 
-;;NO TOCAR
+;;No se
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -32,22 +32,21 @@
     ("938d8c186c4cb9ec4a8d8bc159285e0d0f07bad46edf20aa469a89d0d2a586ea" "b571f92c9bfaf4a28cb64ae4b4cdbda95241cd62cf07d942be44dc8f46c491f4" default)))
  '(package-selected-packages
    (quote
-    (auctex org-bullets magit elpy company-mode ample-theme haskell-mode multiple-cursors rainbow-delimiters smartparens use-package))))
+    (rust-mode ensime auctex org-bullets magit elpy company-mode ample-theme haskell-mode multiple-cursors rainbow-delimiters smartparens use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-;;NO TOCAR
 
+;;Theme
 (use-package ample-theme
     :init
     (load-theme 'ample)
     :ensure t)
 
-;;--------INTERFACE\---------
-;;-------/PROGRAMMING--------
+;;Parens
 (setq show-paren-delay 0)
 (show-paren-mode 1)
 
@@ -60,6 +59,7 @@
   :init
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
+;;Multiple Cursors
 (use-package multiple-cursors
   :ensure t
   :bind (("C-S-c C-S-c" . mc/edit-lines)
@@ -67,6 +67,7 @@
          ("C-<" . mc/mark-previous-like-this)
          ("C-c C-<" . mc/add-cursor-on-click)))
 
+;;Company Mode
 (use-package company-mode
   :ensure t
   :config
@@ -75,19 +76,17 @@
   )
 ;;Backup files
 (setq backup-directory-alist '(("" . "~/.emacs.d/emacs-backup")))
-;;--------PROGRAMMING\------
-;;--------ORG-------
+;;Org Bullet
 (use-package org-bullets
   :ensure t
   :init (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   )
-;;--------Magit\-------
+;;Magit
 (use-package magit
   :ensure t
   :bind (("C-x g" . magit-status)
          ("C-x M-g" . magit-dispatch-popup))
   )
-;;--------LANGUAGUES\------
 ;;Haskell
 (use-package haskell-mode
   :ensure t)
@@ -95,7 +94,13 @@
 (use-package elpy
   :ensure t
   :init(elpy-enable))
-
+;;Scala
+(use-package ensime
+  :ensure t
+  :pin melpa-stable)
+;;Rust
+(use-package rust-mode
+  :ensure t)
 
 
 
