@@ -46,7 +46,7 @@ bindsym $mod+F6 exec --no-startup-id xbacklight -dec 10
 #Launch Programs
 bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+c exec Telegram
-bindsym $mod+b exec chromium
+bindsym $mod+b exec firefox
 bindsym $mod+e exec emacsclient -c
 bindsym $mod+m exec spotify
 #Focus
