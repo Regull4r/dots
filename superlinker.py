@@ -28,29 +28,31 @@ for x in confiles:
     
 
 symlinks = [os.path.join(home, '/'.join(x.split("/")[1:])) for x in lpath]
-syncedfiles = [os.path.join(os.path.abspath("."), '/'.join(x.split("/")[1:])) for x in lpath]
+syncedfiles = [os.path.join(os.path.abspath("."), '/'.join(x.split("/"))) for x in lpath]
 
-#print(*symlinks, sep ="\n")
+#print(*symlinks, sep ="\n")
 #print(*syncedfiles, sep = "\n")
-def symlinker(sourceL, lnk):
-    for src, lnk in zip(sourceL, linkL):
+def symlinker(sourceL, lnkL):
+    for src, lnk in zip(sourceL, lnkL):
         if os.path.exists(lnk) and not os.path.islink(lnk):
-            if yesno("File exists. Overwrite?") is False:
-                break
+            if yesno("File" + lnk + " exists. Overwrite? \n") is True:
+                os.remove(lnk)
             else:
                 try:
                     os.makedirs(os.path.dirname(lnk))
                 except OSError as err:
                     print(err)
+                    print("makedir")
                 else:
-                    print(lnk + " created.")
+                    print(lnk + " created. \n")
         #symlink
         try:
-            os.selfymlink(src, lnk)
+            os.symlink(src, lnk)
         except OSError as err:
-            print(err)
+            print(lnk + " -> " + src + "already exists")
         else:
-            print(lnk + " -> " + src + " created.")
+            print(lnk + " -> " + src + " created. \n")
             
-            
+
+symlinker(syncedfiles, symlinks)
         
