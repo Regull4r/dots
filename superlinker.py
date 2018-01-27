@@ -30,7 +30,7 @@ for x in confiles:
 symlinks = [os.path.join(home, '/'.join(x.split("/")[1:])) for x in lpath]
 syncedfiles = [os.path.join(os.path.abspath("."), '/'.join(x.split("/"))) for x in lpath]
 
-#print(*symlinks, sep ="\n")
+#print(*symlinks, sep ="\n")
 #print(*syncedfiles, sep = "\n")
 def symlinker(sourceL, lnkL):
     for src, lnk in zip(sourceL, lnkL):
@@ -49,7 +49,7 @@ def symlinker(sourceL, lnkL):
         try:
             os.symlink(src, lnk)
         except OSError as err:
-            print(lnk + " -> " + src + "already exists")
+            print(lnk + " -> " + src + "already exists \n")
         else:
             print(lnk + " -> " + src + " created. \n")
             
