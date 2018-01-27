@@ -34,20 +34,21 @@ syncedfiles = [os.path.join(os.path.abspath("."), '/'.join(x.split("/"))) for x 
 #print(*syncedfiles, sep = "\n")
 def symlinker(sourceL, lnkL):
     for src, lnk in zip(sourceL, lnkL):
-        if os.path.exists(lnk) and not os.path.islink(lnk):
+        if not os.path.exists(lnk):
+            try:
+                os.makedirs(os.path.dirname(lnk))
+            except OSError as err:
+                print(err)
+            else:
+                print(os.path.dirname(lnk) + " created. \n")
+        elif not os.path.islink(lnk):
             if yesno("File" + lnk + " exists. Overwrite? \n") is True:
                 os.remove(lnk)
-            else:
-                try:
-                    os.makedirs(os.path.dirname(lnk))
-                except OSError as err:
-                    print(err)
-                else:
-                    print(lnk + " created. \n")
-        else if os.path.islink(lnk):
+        elif os.path.islink(lnk):
             if os.readlink(lnk) != src:
                 if yesno("Change" + lnk + "source? \n") is True:
                     os.remove(lnk)
+
         try:
             os.symlink(src, lnk)
         except OSError as err:
