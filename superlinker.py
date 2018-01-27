@@ -42,14 +42,16 @@ def symlinker(sourceL, lnkL):
                     os.makedirs(os.path.dirname(lnk))
                 except OSError as err:
                     print(err)
-                    print("makedir")
                 else:
                     print(lnk + " created. \n")
-        #symlink
+        else if os.path.islink(lnk):
+            if os.readlink(lnk) != src:
+                if yesno("Change" + lnk + "source? \n") is True:
+                    os.remove(lnk)
         try:
             os.symlink(src, lnk)
         except OSError as err:
-            print(lnk + " -> " + src + "already exists \n")
+            print(lnk + " -> " + src + " already exists \n")
         else:
             print(lnk + " -> " + src + " created. \n")
             
