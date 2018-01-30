@@ -12,7 +12,9 @@
 (unless (featurep 'use-package)
   (package-refresh-contents)
   (package-install 'use-package)
-  ) 
+  )
+
+(require 'use-package)
 ;;Interface
 (tooltip-mode -1)
 (tool-bar-mode -1)
@@ -52,7 +54,7 @@
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
 ;;Theme
-(Use-package ample-theme
+(use-package ample-theme
   :init
   (load-theme 'ample)
   :ensure t)
