@@ -23,8 +23,8 @@ path = ""
 for x in confiles:
     for dirpath, dirs, files in os.walk(x):
         ruta = dirpath
-    for y in files:
-        lpath.append(ruta + "/" +  y)
+        for y in files:
+            lpath.append(ruta + "/" +  y)
     
 
 symlinks = [os.path.join(home, '/'.join(x.split("/")[1:])) for x in lpath]

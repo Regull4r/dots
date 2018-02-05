@@ -8,23 +8,63 @@
    '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
   (package-initialize))
 
-;;Use-package
-(unless (featurep 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package)
-  )
 
-(require 'use-package)
-;;Interface
-(tooltip-mode -1)
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
-(global-linum-mode 1)
-(column-number-mode t)
-(set-fringe-mode 0)
+(add-to-list 'load-path "~/.emacs.d/config")
+(load-library "interface") 
+(load-library "programming")
 
-;;No se
+
+;;General settings
+
+;;IDO mode
+(ido-mode 1)
+(ido-everywhere 1)
+(use-package ido-completing-read+
+  :ensure t
+  :init
+  (ido-ubiquitous-mode 1))
+(use-package ido-vertical-mode
+  :ensure t
+  :init
+  (ido-vertical-mode 1)
+  (setq ido-vertical-define-keys 'C-n-and-C-p-only))
+
+;;Smex
+(use-package smex
+  :ensure t
+  :init
+  (smex-initialize) ; Can be omitted. This might cause a (minimal) delay
+					; when Smex is auto-initialized on its first run.
+  (global-set-key (kbd "M-x") 'smex)
+  (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+  ;; This is your old M-x.
+  (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command))
+
+
+;;Magit
+;;Magit
+(use-package magit
+  :ensure t
+  :bind (("C-x g" . magit-status)
+         ("C-x M-g" . magit-dispatch-popup)))
+
+;;Save ~files elsewhere
+(setq backup-directory-alist '(("" . "~/.emacs.d/emacs-backup")))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -32,98 +72,36 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("1db337246ebc9c083be0d728f8d20913a0f46edc0a00277746ba411c149d7fe5" "938d8c186c4cb9ec4a8d8bc159285e0d0f07bad46edf20aa469a89d0d2a586ea" "b571f92c9bfaf4a28cb64ae4b4cdbda95241cd62cf07d942be44dc8f46c491f4" default)))
+    ("6de7c03d614033c0403657409313d5f01202361e35490a3404e33e46663c2596" "1db337246ebc9c083be0d728f8d20913a0f46edc0a00277746ba411c149d7fe5" "ed317c0a3387be628a48c4bbdb316b4fa645a414838149069210b66dd521733f" "938d8c186c4cb9ec4a8d8bc159285e0d0f07bad46edf20aa469a89d0d2a586ea" "9be1d34d961a40d94ef94d0d08a364c3d27201f3c98c9d38e36f10588469ea57" "fee4e306d9070a55dce4d8e9d92d28bd9efe92625d2ba9d4d654fc9cd8113b7f" "82fce2cada016f736dbcef237780516063a17c2436d1ee7f42e395e38a15793b" "858a353233c58b69dbe3a06087fc08905df2d8755a0921ad4c407865f17ab52f" default)))
+ '(fci-rule-color "#2e2e2e")
  '(package-selected-packages
    (quote
-    (ample-zen-theme projectile sudo-edit rust-mode ensime auctex org-bullets magit elpy company-mode ample-theme haskell-mode multiple-cursors rainbow-delimiters smartparens use-package))))
+    (base16-theme gruvbox-theme aggressive-indent use-package sudo-edit smartparens rust-mode rainbow-delimiters projectile org-bullets multiple-cursors magit haskell-mode flx-ido ensime elpy diminish cyberpunk-theme auctex ample-zen-theme ample-theme)))
+ '(vc-annotate-background "#3b3b3b")
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#dd5542")
+     (40 . "#CC5542")
+     (60 . "#fb8512")
+     (80 . "#baba36")
+     (100 . "#bdbc61")
+     (120 . "#7d7c61")
+     (140 . "#6abd50")
+     (160 . "#6aaf50")
+     (180 . "#6aa350")
+     (200 . "#6a9550")
+     (220 . "#6a8550")
+     (240 . "#6a7550")
+     (260 . "#9b55c3")
+     (280 . "#6CA0A3")
+     (300 . "#528fd1")
+     (320 . "#5180b3")
+     (340 . "#6380b3")
+     (360 . "#DC8CC3"))))
+ '(vc-annotate-very-old-color "#DC8CC3"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-;;Completion
-(ido-mode t)
-(use-package flx-ido
-  :ensure t)
-(require 'flx-ido)
-(ido-mode 1)
-(ido-everywhere 1)
-(flx-ido-mode 1)
-;; disable ido faces to see flx highlights.
-(setq ido-enable-flex-matching t)
-(setq ido-use-faces nil)
-;;Theme
-(use-package ample-theme
-  :init
-  (load-theme 'ample)
-  :ensure t)
-;;Projectile
-(use-package projectile
-  :ensure t )
-;;Parens
-(setq show-paren-delay 0)
-(show-paren-mode 1)
-
-(electric-pair-mode 1)
-
-(use-package rainbow-delimiters
-  :ensure t
-  :init
-  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
-
-;;Multiple Cursors
-(use-package multiple-cursors
-  :ensure t
-  :bind (("C-S-c C-S-c" . mc/edit-lines)
-         ("C->" . mc/mark-next-like-this)
-         ("C-<" . mc/mark-previous-like-this)
-         ("C-c C-<" . mc/add-cursor-on-click)))
-
-;;Company 
-(use-package company-mode
-  :ensure t
-  :init(add-hook 'after-init-hook 'global-company-mode)
-  )
-
-;;Backup files
-(setq backup-directory-alist '(("" . "~/.emacs.d/emacs-backup")))
-;;Org Bullet
-(use-package org-bullets
-  :ensure t
-  :init (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-  )
-;;Magit
-(use-package magit
-  :ensure t
-  :bind (("C-x g" . magit-status)
-         ("C-x M-g" . magit-dispatch-popup))
-  )
-;;Sudo Edit
-(use-package sudo-edit
-  :ensure t)
-;;Language
-;;Haskell
-(use-package haskell-mode
-  :ensure t)
-;;Python
-(use-package elpy
-  :ensure t
-  :init(elpy-enable))
-;;Scala
-(use-package ensime
-  :ensure t
-  :pin melpa-stable)
-;;Rust
-(use-package rust-mode
-  :ensure t)
-
-
-
-
-
-
-
-
-
-
