@@ -32,7 +32,7 @@ exec  $term -name dropdown
 #Shortcuts----
 #Terminal
 bindsym $mod+t exec $term
-bindsym $mod+Shift+t  exec $term -n dropdown
+bindsym $mod+Shift+t  exec $term -name dropdown
 bindsym $mod+Return [instance="dropdown"] scratchpad show; move position center
 #Kill
 bindsym $mod+Shift+BackSpace kill
