@@ -1,0 +1,41 @@
+!Ample-zen theme
+*background:     #212121
+*foreground:     #bdbdb3
+*cursorColor:    #fb8512
+*colorUL:        #cc8512
+*underlineColor: #baba36
+*color0:         #0a0a0a
+*color1:         #CC5542
+*color2:         #6aa350
+*color3:         #bdbc61
+*color4:         #5180b3
+*color5:         #DC8CC3
+*color6:         #6a7550
+*color7:         #9b9b9b
+*color8:         #4c4c4c
+*color9:         #dd5542
+*color10:        #6abd50
+*color11:        #bdbc61
+*color12:        #528fd1
+*color13:        #5C888B
+*color14:        #6380b3
+*color15:        #c9c9c9
+
+!rxvt-unicode
+URxvt.scrollBar: false
+URxvt.font: xft:monospace:size=11
+!extensions
+URxvt.perl-ext-common: default,matcher,resize-font,url-select,keyboard-select
+URxvt.colorUL:		#4682B4
+! url-select
+URxvt.keysym.M-u:	perl:url-select:select_next
+URxvt.url-select.launcher: webview
+URxvt.url-select.underline: true
+! keyboard-select:
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+!! resize-font
+URxvt.resize-font.smaller:	C-Down
+URxvt.resize-font.bigger:	C-Up
+! Matcher
+URxvt.url-launcher:	webview
+URxvt.matcher.button: 1
