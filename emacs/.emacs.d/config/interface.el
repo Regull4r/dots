@@ -18,6 +18,9 @@
   :init
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
+;;Rainbow mode
+(use-package rainbow-mode
+  :ensure t)
 ;;Theme
 (use-package ample-zen-theme
   :ensure t
