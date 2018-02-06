@@ -37,9 +37,9 @@ bindsym $mod+Return [instance="dropdown"] scratchpad show; move position center
 #Kill
 bindsym $mod+Shift+BackSpace kill
 #Audio
-bindsym $mod+F10 exec  pactl set-sink-volume 1 +5%
-bindsym $mod+F9 exec pactl set-sink-volume 1 -5%
-bindsym $mod+F8 exec pactl set-sink-mute 1 toggle
+bindsym $mod+F10 exec  pactl set-sink-volume 0 +5%
+bindsym $mod+F9 exec pactl set-sink-volume 0 -5%
+bindsym $mod+F8 exec pactl set-sink-mute 0 toggle
 #Screen
 bindsym $mod+F7 exec --no-startup-id xbacklight -inc 10
 bindsym $mod+F6 exec --no-startup-id xbacklight -dec 10
@@ -73,7 +73,8 @@ bindsym $mod+v split v
 #bindsym $mod+q split toggle
 #Fullscreen
 bindsym $mod+f fullscreen toggle
-#Layout 
+#Layout
+bindsym $mod+w layout tabbed
 bindsym $mod+s layout toggle tabbed split 
 #Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -192,8 +193,8 @@ bar {
 	statusline $foreground
 	separator  $color3
 
-	focused_workspace  $color11 $color11 $color0
-        active_workspace   #333333 #5f676a #ffffff
+	focused_workspace  $color2 $color2 $color0
+        active_workspace   $color13 $color13 $color0
         inactive_workspace $color8 $color8 $color15
         urgent_workspace   $cursorcolor $cursorcolor $color0
         binding_mode       $color12 $color12 $color0
@@ -202,10 +203,10 @@ bar {
     }
 }
 # class                 border	 backgr text    indicator child_border
-client.focused          $color11 $color11  $color0 $color11   $color11
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.focused          $color2 $color2 $color0 $color2 $color2
+client.focused_inactive $color13 $color13 $color13 $color2 $color13
+client.unfocused        $color8 $color8 $color8 $color2 $color8
+client.urgent           $cursorcolor $cursorcolor $cursorcolor $cursorcolor
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-client.background       #ffffff
+client.background       $background
