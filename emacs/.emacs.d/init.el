@@ -19,6 +19,7 @@
 ;;IDO mode
 (ido-mode 1)
 (ido-everywhere 1)
+
 (use-package ido-completing-read+
   :ensure t
   :init
@@ -76,7 +77,7 @@
  '(fci-rule-color "#2e2e2e")
  '(package-selected-packages
    (quote
-    (base16-theme gruvbox-theme aggressive-indent use-package sudo-edit smartparens rust-mode rainbow-delimiters projectile org-bullets multiple-cursors magit haskell-mode flx-ido ensime elpy diminish cyberpunk-theme auctex ample-zen-theme ample-theme)))
+    (clang-format base16-theme gruvbox-theme aggressive-indent use-package sudo-edit smartparens rust-mode rainbow-delimiters projectile org-bullets multiple-cursors magit haskell-mode flx-ido ensime elpy diminish cyberpunk-theme auctex ample-zen-theme ample-theme)))
  '(vc-annotate-background "#3b3b3b")
  '(vc-annotate-color-map
    (quote

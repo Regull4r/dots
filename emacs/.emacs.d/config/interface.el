@@ -4,6 +4,9 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 
+;;Visual line mode
+(global-visual-line-mode 1)
+
 ;;Position info
 (global-linum-mode 1)
 (column-number-mode t)

@@ -4,6 +4,10 @@ set $term urxvt
 font xft:Noto Sans 10
 focus_follows_mouse no
 exec xmodmap -e "keycode 124=F11"
+#exec xmodmap -e "keycode 64=Super_L"
+#exec xmodmap -e "keycode 133=Control_L"
+#exec xmodmap -e "keycode 37=Alt_L"
+
 for_window [class="^.*"] border pixel 3
 
 #Startup applications----
@@ -75,7 +79,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 #Layout
 bindsym $mod+w layout tabbed
-bindsym $mod+s layout toggle tabbed split 
+bindsym $mod+s layout toggle tabbed split
+#Floating Modifier
+floating_modifier $mod
 #Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 #Focus parent container
