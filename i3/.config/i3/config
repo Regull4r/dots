@@ -12,11 +12,9 @@ for_window [class="^.*"] border pixel 3
 
 #Startup applications----
 #Wallpaper
-exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/deer.png
+exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/emacs.png
 #Wifi
 exec --no-startup-id nm-applet
-#Wallpaper
-exec --no-startup-id nitrogen --set-zoom-fill ~/Pictures/Wallpapers/deer.png
 #PowerManager
 exec --no-startup-id xfce4-power-manager
 #Audio
@@ -63,14 +61,20 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 #Move Focused Window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+j		move left
+bindsym $mod+Shift+k	     	move down
+bindsym $mod+Shift+l	     	move up
+bindsym $mod+Shift+semicolon 	move right
+bindsym $mod+Shift+Left      	move left
+bindsym $mod+Shift+Down      	move down
+bindsym $mod+Shift+Up 	     	move up
+bindsym $mod+Shift+Right     	move right
+#Move Window Position
+bindsym $mod+mod1+Left   move left 40 px 
+bindsym $mod+mod1+Down   move down 40 px 
+bindsym $mod+mod1+Up     move up 40 px 
+bindsym $mod+mod1+Right  move right 40 px 
+
 #Split Orientation
 bindsym $mod+h split h
 bindsym $mod+v split v
