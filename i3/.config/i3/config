@@ -42,6 +42,11 @@ bindsym $mod+Shift+BackSpace kill
 bindsym $mod+F10 exec  pactl set-sink-volume 0 +5%
 bindsym $mod+F9 exec pactl set-sink-volume 0 -5%
 bindsym $mod+F8 exec pactl set-sink-mute 0 toggle
+#Music Control
+bindsym XF86AudioPlay exec playerctl play-pause 
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
 #Screen
 bindsym $mod+F7 exec --no-startup-id xbacklight -inc 10
 bindsym $mod+F6 exec --no-startup-id xbacklight -dec 10
