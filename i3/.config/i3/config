@@ -46,9 +46,9 @@ bindsym $mod+F8 exec pactl set-sink-mute 0 toggle
 bindsym XF86AudioPlay exec playerctl play-pause 
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-bindsym $mod+F1 exec playerctl play-pause 
+bindsym $mod+F1 exec playerctl previous 
 bindsym $mod+F2 exec playerctl next
-bindsym $mod+F3 exec playerctl previous
+bindsym $mod+F3 exec playerctl play-pause
 #Screen
 bindsym $mod+F7 exec --no-startup-id xbacklight -inc 10
 bindsym $mod+F6 exec --no-startup-id xbacklight -dec 10
@@ -175,7 +175,7 @@ for_window [class="Spotify"] move window to workspace $ws4
 
 #Floating Windows
 for_window [class = "Pavucontrol"] floating enabled
-
+for_window [class = "Engrampa"] floating enabled
 #Colors from ~/.Xresources
 set_from_resource $background  i3wm.background     #000000
 set_from_resource $foreground  i3wm.foreground     #000000
