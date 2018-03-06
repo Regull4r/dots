@@ -170,6 +170,7 @@ assign [class="Chromium"] $ws1
 assign [class="Firefox"] $ws1
 assign [class="Emacs"] $ws2
 assign [class="Telegram"] $ws5
+assign [class= "discord"] $ws5
 #spotify doesn repect
 for_window [class="Spotify"] move window to workspace $ws4
 
