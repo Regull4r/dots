@@ -226,8 +226,8 @@ bar {
 }
 # class                 border	 backgr text    indicator child_border
 client.focused          $color2 $color2 $color0 $color2 $color2
-client.focused_inactive $color13 $color13 $color13 $color2 $color13
-client.unfocused        $color8 $color8 $color8 $color2 $color8
+client.focused_inactive $color13 $color13 $color0 $color2 $color13
+client.unfocused        $color8 $color8 $color15 $color2 $color8
 client.urgent           $cursorcolor $cursorcolor $cursorcolor $cursorcolor
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
