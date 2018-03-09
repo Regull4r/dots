@@ -12,7 +12,7 @@
 (add-to-list 'load-path "~/.emacs.d/config")
 (load-library "interface") 
 (load-library "programming")
-
+(load-library "languagues")
 
 ;;General settings
 
