@@ -29,6 +29,10 @@
   :ensure t
   :config (load-theme 'ample-zen t))
 
+;;All the icons
+(use-package all-the-icons
+  :ensure t)
+
 ;;Org Bullets
 (use-package org-bullets
   :ensure t

@@ -213,7 +213,7 @@ bar {
 	colors {
 	background $background
 	statusline $foreground
-	separator  $color3
+	separator  $color15
 
 	focused_workspace  $color2 $color2 $color0
         active_workspace   $color13 $color13 $color0
