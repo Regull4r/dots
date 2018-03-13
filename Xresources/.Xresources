@@ -26,7 +26,10 @@ URxvt.scrollBar: false
 URxvt.font: xft:monospace:size=11
 !extensions
 URxvt.perl-ext-common: default,matcher,resize-font,url-select,keyboard-select
-URxvt.colorUL:		#4682B4
+URxvt.colorUL:	#4682B4
+!matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
 ! url-select
 URxvt.keysym.M-u:	perl:url-select:select_next
 URxvt.url-select.launcher: webview
