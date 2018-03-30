@@ -23,7 +23,7 @@
 
 !rxvt-unicode
 URxvt.scrollBar: false
-URxvt.font: xft:monospace:size=11
+URxvt.font:  xft:Deja Vu Sans Mono:size=12
 !extensions
 URxvt.perl-ext-common: default,matcher,resize-font,url-select,keyboard-select
 URxvt.colorUL:	#4682B4
@@ -39,9 +39,7 @@ URxvt.keysym.M-Escape: perl:keyboard-select:activate
 !! resize-font
 URxvt.resize-font.smaller:	C-Down
 URxvt.resize-font.bigger:	C-Up
-! Matcher
-URxvt.url-launcher:	webview
-URxvt.matcher.button: 1
+
 
 Xft.dpi: 96
 Xft.antialias: true
