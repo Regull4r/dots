@@ -26,7 +26,7 @@ exec --no-startup-id emacs -daemon
 #Dropdown Terminal----
 #Shortcut for this in shorcuts
 for_window [instance="dropdown"] floating enable
-for_window [instance="dropdown"] resize set 625 400
+for_window [instance="dropdown"] resize set 800 600
 for_window [instance="dropdown"] move position center
 for_window [instance="dropdown"] move scratchpad
 exec  $term -name dropdown
