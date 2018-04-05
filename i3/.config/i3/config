@@ -172,7 +172,7 @@ assign [class="Emacs"] $ws2
 assign [class="Telegram"] $ws5
 assign [class= "discord"] $ws5
 #spotify doesn repect
-for_window [class="Spotify"] move window to workspace $ws4
+for_window [class="Spotify"] move window to workspace $ws6
 
 #Floating Windows
 for_window [class = "Pavucontrol"] floating enabled
