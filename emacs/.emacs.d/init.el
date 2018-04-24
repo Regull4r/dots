@@ -8,7 +8,7 @@
    '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
   (package-initialize))
 
-
+;;Ciao
 (add-to-list 'load-path "~/.emacs.d/config")
 (load-library "interface") 
 (load-library "programming")
@@ -106,3 +106,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+					;Ciao
+(if (file-exists-p "~/.ciaoroot/master/ciao_emacs/elisp/ciao-site-file.el")
+    (load-file "~/.ciaoroot/master/ciao_emacs/elisp/ciao-site-file.el")) 
