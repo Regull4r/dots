@@ -19,6 +19,7 @@
   :ensure t
   :config(elpy-enable))
 
+
 ;;;;Prolog
 ;;(autoload 'run-prolog "prolog" "Start a Prolog sub-process." t)
 ;;(autoload 'prolog-mode "prolog" "Major mode for editing Prolog programs." t)
