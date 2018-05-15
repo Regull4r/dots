@@ -8,7 +8,7 @@
    '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
   (package-initialize))
 
-;;Ciao
+
 (add-to-list 'load-path "~/.emacs.d/config")
 (load-library "interface") 
 (load-library "programming")
