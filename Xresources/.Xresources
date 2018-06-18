@@ -1,4 +1,5 @@
-!Ample-zen theme
+!!Ample-zen theme
+!https://github.com/mjwall/ample-zen
 *background:     #212121
 *foreground:     #bdbdb3
 *cursorColor:    #fb8512
@@ -21,7 +22,7 @@
 *color14:        #6380b3
 *color15:        #c9c9c9
 
-!rxvt-unicode
+!!rxvt-unicode
 URxvt.scrollBar: false
 URxvt.font:  xft:Deja Vu Sans Mono:size=12
 !extensions
@@ -40,6 +41,7 @@ URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.resize-font.smaller:	C-Down
 URxvt.resize-font.bigger:	C-Up
 
+!!Rofi
 
 Xft.dpi: 96
 Xft.antialias: true
