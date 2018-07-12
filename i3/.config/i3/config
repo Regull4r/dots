@@ -81,7 +81,11 @@ bindsym $mod+Shift+Right     	move right
 bindsym $mod+mod1+Left   move left 40 px 
 bindsym $mod+mod1+Down   move down 40 px 
 bindsym $mod+mod1+Up     move up 40 px 
-bindsym $mod+mod1+Right  move right 40 px 
+bindsym $mod+mod1+Right  move right 40 px
+# Move Workspace to Monitor
+bindsym $mod+i move workspace to output up
+bindsym $mod+o move workspace to output down
+
 #Change focus toggle
 bindsym $mod+space focus mode_toggle
 #Split Orientation
