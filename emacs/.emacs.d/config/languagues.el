@@ -28,6 +28,9 @@
 	      (flycheck-mode +1)
 	      (setq c-basic-offset 4))))
 
+;;Prolog
+(use-package haskell-mode
+  :ensure t)
 
 ;;;;Prolog
 ;;(autoload 'run-prolog "prolog" "Start a Prolog sub-process." t)
