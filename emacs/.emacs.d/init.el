@@ -43,7 +43,6 @@
 
 
 ;;Magit
-;;Magit
 (use-package magit
   :ensure t
   :bind (("C-x g" . magit-status)
@@ -107,5 +106,5 @@
  ;; If there is more than one, they won't work right.
  )
 					;Ciao
-(if (file-exists-p "~/.ciaoroot/master/ciao_emacs/elisp/ciao-site-file.el")
-    (load-file "~/.ciaoroot/master/ciao_emacs/elisp/ciao-site-file.el")) 
+;;(if (file-exists-p "~/.ciaoroot/master/ciao_emacs/elisp/ciao-site-file.el")
+;;    (load-file "~/.ciaoroot/master/ciao_emacs/elisp/ciao-site-file.el")) 

@@ -24,10 +24,11 @@
 ;;Rainbow mode
 (use-package rainbow-mode
   :ensure t)
+
 ;;Theme
-(use-package ample-zen-theme
+(use-package material-theme
   :ensure t
-  :config (load-theme 'ample-zen t))
+  :config (load-theme 'material t))
 
 ;;All the icons
 (use-package all-the-icons
