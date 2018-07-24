@@ -4,9 +4,6 @@ set $term urxvt
 font xft:Noto Sans 10
 focus_follows_mouse no
 exec xmodmap -e "keycode 124=F11"
-#exec xmodmap -e "keycode 64=Super_L"
-#exec xmodmap -e "keycode 133=Control_L"
-#exec xmodmap -e "keycode 37=Alt_L"
 
 for_window [class="^.*"] border pixel 3
 
@@ -15,9 +12,9 @@ for_window [class="^.*"] border pixel 3
 exec --no-startup-id feh --bg-fill  ~/Pictures/Wallpapers/emacs.png
 #Wifi
 exec --no-startup-id nm-applet
-#PowerManager
-#exec --no-startuo-id xscreensaver
-exec --no-startup-id xfce4-power-manager
+#PowerManagement
+exec xautolock -time 5 -locker "i3lock  -i ~/Pictures/Wallpapers/deerll.png" &
+exec xautolock -time 7 -locker "systemctl suspend" 
 #Audio
 exec --no-startup-id pulseaudio
 exec --no-startup-id pa-applet
@@ -39,6 +36,7 @@ bindsym $mod+Shift+t  exec $term -name dropdown
 bindsym $mod+Return [instance="dropdown"] scratchpad show; move position center
 #Kill
 bindsym $mod+Shift+BackSpace kill
+bindsym $mod+Shift+q kill
 #Audio
 bindsym $mod+F10 exec  pactl set-sink-volume 0 +5%
 bindsym $mod+F9 exec pactl set-sink-volume 0 -5%
@@ -60,14 +58,14 @@ bindsym $mod+b exec chromium
 bindsym $mod+e exec emacsclient -c
 bindsym $mod+m exec spotify
 #Focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+j		focus left
+bindsym $mod+k 	      	focus down
+bindsym $mod+l 		focus up
+bindsym $mod+semicolon 	focus right
+bindsym $mod+Left 	focus left
+bindsym $mod+Down 	focus down
+bindsym $mod+Up 	focus up
+bindsym $mod+Right 	focus right
 #Move Focused Window
 bindsym $mod+Shift+j		move left
 bindsym $mod+Shift+k	     	move down
@@ -78,10 +76,10 @@ bindsym $mod+Shift+Down      	move down
 bindsym $mod+Shift+Up 	     	move up
 bindsym $mod+Shift+Right     	move right
 #Move Window Position
-bindsym $mod+mod1+Left   move left 40 px 
-bindsym $mod+mod1+Down   move down 40 px 
-bindsym $mod+mod1+Up     move up 40 px 
-bindsym $mod+mod1+Right  move right 40 px
+bindsym $mod+mod1+Left		move left 40 px 
+bindsym $mod+mod1+Down   	move down 40 px 
+bindsym $mod+mod1+Up     	move up 40 px 
+bindsym $mod+mod1+Right  	move right 40 px
 # Move Workspace to Monitor
 bindsym $mod+i move workspace to output up
 bindsym $mod+o move workspace to output down

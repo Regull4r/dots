@@ -73,11 +73,11 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("c968804189e0fc963c641f5c9ad64bca431d41af2fb7e1d01a2a6666376f819c" "6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "6de7c03d614033c0403657409313d5f01202361e35490a3404e33e46663c2596" "1db337246ebc9c083be0d728f8d20913a0f46edc0a00277746ba411c149d7fe5" "ed317c0a3387be628a48c4bbdb316b4fa645a414838149069210b66dd521733f" "938d8c186c4cb9ec4a8d8bc159285e0d0f07bad46edf20aa469a89d0d2a586ea" "9be1d34d961a40d94ef94d0d08a364c3d27201f3c98c9d38e36f10588469ea57" "fee4e306d9070a55dce4d8e9d92d28bd9efe92625d2ba9d4d654fc9cd8113b7f" "82fce2cada016f736dbcef237780516063a17c2436d1ee7f42e395e38a15793b" "858a353233c58b69dbe3a06087fc08905df2d8755a0921ad4c407865f17ab52f" default)))
+    ("a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" "876fe28b6263ef36feeff1fa10db90a08ed899d1c6505b1d040d556db8ed0d2d" "c968804189e0fc963c641f5c9ad64bca431d41af2fb7e1d01a2a6666376f819c" "6daa09c8c2c68de3ff1b83694115231faa7e650fdbb668bc76275f0f2ce2a437" "6de7c03d614033c0403657409313d5f01202361e35490a3404e33e46663c2596" "1db337246ebc9c083be0d728f8d20913a0f46edc0a00277746ba411c149d7fe5" "ed317c0a3387be628a48c4bbdb316b4fa645a414838149069210b66dd521733f" "938d8c186c4cb9ec4a8d8bc159285e0d0f07bad46edf20aa469a89d0d2a586ea" "9be1d34d961a40d94ef94d0d08a364c3d27201f3c98c9d38e36f10588469ea57" "fee4e306d9070a55dce4d8e9d92d28bd9efe92625d2ba9d4d654fc9cd8113b7f" "82fce2cada016f736dbcef237780516063a17c2436d1ee7f42e395e38a15793b" "858a353233c58b69dbe3a06087fc08905df2d8755a0921ad4c407865f17ab52f" default)))
  '(fci-rule-color "#2e2e2e")
  '(package-selected-packages
    (quote
-    (yaml-mode tldr ediprolog clang-format base16-theme gruvbox-theme aggressive-indent use-package sudo-edit smartparens rust-mode rainbow-delimiters projectile org-bullets multiple-cursors magit haskell-mode flx-ido ensime elpy diminish cyberpunk-theme auctex ample-zen-theme ample-theme)))
+    (nimbus-theme yaml-mode tldr ediprolog clang-format base16-theme gruvbox-theme aggressive-indent use-package sudo-edit smartparens rust-mode rainbow-delimiters projectile org-bullets multiple-cursors magit haskell-mode flx-ido ensime elpy diminish cyberpunk-theme auctex ample-zen-theme ample-theme)))
  '(vc-annotate-background "#3b3b3b")
  '(vc-annotate-color-map
    (quote
