@@ -12,10 +12,12 @@
   (add-hook 'racer-mode-hook #'eldoc-mode)
   (add-hook 'racer-mode-hook #'company-mode))
 
+
 ;;Python
 (use-package elpy
   :ensure t
   :config(elpy-enable))
+
 
 ;;Java
 (use-package meghanada
@@ -28,18 +30,14 @@
 	      (flycheck-mode +1)
 	      (setq c-basic-offset 4))))
 
-;;Prolog
+
+;;Haskell
 (use-package haskell-mode
   :ensure t)
 
-;;;;Prolog
-;;(autoload 'run-prolog "prolog" "Start a Prolog sub-process." t)
-;;(autoload 'prolog-mode "prolog" "Major mode for editing Prolog programs." t)
-;;(autoload 'mercury-mode "prolog" "Major mode for editing Mercury programs." t)
-;;(setq prolog-system 'swi)
-;;(setq auto-mode-alist (append '(("\\.pl$" . prolog-mode)
-;;                                ("\\.m$" . mercury-mode))
-;;			      auto-mode-alist))
-;;
-;;(use-package ediprolog
-;;  :ensure t)
+
+;;Bash
+(add-hook 'sh-mode-hook 'flycheck-mode)
+(setq flycheck-shellcheck-follow-sources nil)
+
+
