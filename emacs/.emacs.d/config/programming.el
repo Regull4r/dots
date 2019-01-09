@@ -26,3 +26,7 @@
 ;;Flycheck
 (use-package flycheck
   :ensure t)
+
+;;no tabs
+;;(setq-default indent-tabs-mode nil)
+(setq tab-width 4)
